@@ -50,6 +50,9 @@ public class PlayerRaycast : MonoBehaviour
         text.GetComponent<Text>().text = "";
         Destroy(text);
         Destroy(this.gameObject);
+        //use this version if the trigger has a parent, tag also the parent with the MessageTrigger tag
         Destroy(messageTrigger.transform.GetChild(0).gameObject);
+        //use this version if the trigger is a parentless object
+        //Destroy(messageTrigger);
     }
 }
