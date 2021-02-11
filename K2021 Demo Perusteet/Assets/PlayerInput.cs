@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            print("F key was pressed");
+            //print("F key was pressed");
             Transform FPSCharacter = GameObject.Find("FirstPersonCharacter").transform;
             Vector3 pos = FPSCharacter.position + FPSCharacter.forward * 2;
             pos.y = Terrain.activeTerrain.SampleHeight(pos) + Terrain.activeTerrain.transform.position.y;

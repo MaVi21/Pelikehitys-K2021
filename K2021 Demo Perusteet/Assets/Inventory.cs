@@ -11,10 +11,10 @@ public class Inventory : MonoBehaviour {
 
 		amountOfLogs = amountOfLogs + 1;
 
-        if(this.amountOfLogs == 4)
+        if(this.amountOfLogs == 1)
         {
             Debug.Log("campfire creation enabled!");
-            //GetComponent<PlayerInput>().enabled = true;
+            GetComponent<PlayerInput>().enabled = true;
             campfireUI.SetActive(true);
         }
 	}
