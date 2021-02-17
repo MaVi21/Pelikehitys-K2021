@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class IngameMenu : MonoBehaviour
 {
@@ -22,9 +23,27 @@ public class IngameMenu : MonoBehaviour
         //Listen for Escape
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0;
-            ShowMainMenu();
+            if (!menuOpen)
+            {
+                Time.timeScale = 0;
+                ShowMainMenu();
+                SetFirstPersonMouseLook(false);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                HideAllMenus();
+                SetFirstPersonMouseLook(true);
+            }
+            menuOpen = !menuOpen;
         }
+    }
+
+    private void SetFirstPersonMouseLook(bool b)
+    {
+        GameObject FPSController = GameObject.Find("FPSController");
+        FPSController.GetComponent<FirstPersonController>().m_MouseLook.SetCursorLock(b);
+        FPSController.GetComponent<FirstPersonController>().enabled = b;
     }
 
     public void QuitGame()
