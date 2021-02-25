@@ -12,15 +12,12 @@ public class Snowball : MonoBehaviour {
 		//TODO: Add an impulse force to the snowball to simulate a throwing action
 		GetComponent<Rigidbody> ().AddForce (transform.forward * 20, ForceMode.Impulse);
 		//TODO: Add an auto-destroy mechanism to destroy the snowball after a few seconds
-		Destroy (gameObject, 5);
+		//Destroy (gameObject, 5);
 		
 	}
 
 	void OnCollisionEnter(Collision collision)
 	{
-		//TODO: Destroy gameobject in case of collision
-		//Destroy(gameObject);
-
 		if (collision.gameObject.name == "RigidbodyLog") {
 
 			collision.gameObject.GetComponent<Rigidbody> ().useGravity = true;
@@ -31,8 +28,8 @@ public class Snowball : MonoBehaviour {
 		}
 
 		//TODO: Creatre a snow splatter effect
-		//GameObject s = Instantiate (splatter, transform.position, transform.rotation);
-		//Destroy (s, 3);
-		//Destroy (gameObject);
+		GameObject s = Instantiate (splatter, transform.position, transform.rotation);
+		Destroy (s, 3);
+		Destroy (gameObject);
 	}
 }
