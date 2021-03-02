@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/SampleScenes/Scenes/CharacterFirstPerson.unity
+    path: Assets/Scenes/SampleScenes/Scenes/CharacterFirstPerson.unity
     guid: f2f18f678332b48458bb0e9c5ab081bf
   - enabled: 0
-    path: Assets/SampleScenes/Scenes/AircraftPropeller4Axis.unity
+    path: Assets/Scenes/SampleScenes/Scenes/AircraftPropeller4Axis.unity
     guid: 5bda8cddff6467b49826e3ff2a374f49
   - enabled: 1
     path: Assets/Scenes/RollerBallGame.unity
